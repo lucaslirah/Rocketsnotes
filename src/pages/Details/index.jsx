@@ -1,9 +1,9 @@
-import {Container} from "./styles.js"
+import { Container } from "./styles.js"
 export function Details() {
   
   return (
     <Container>
-      <h1>Hello, world!</h1>  
+      <h1>Hello, world!</h1>
     </Container>
   )
 }
