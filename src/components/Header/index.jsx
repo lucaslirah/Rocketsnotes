@@ -1,7 +1,16 @@
-import { Container } from './styles'
+import { Container, Profile } from './styles'
 
 export function Header(){
     return(
-        <Container></Container>
+        <Container>
+            <Profile>
+                <img src="https://github.com/lucaslirah.png"
+                alt="User's photo."/>
+                <div>
+                    <span>Welcome</span>
+                    <strong>Lucas Lira</strong>
+                </div>
+            </Profile>
+        </Container>
     )
 }
