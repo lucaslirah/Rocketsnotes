@@ -48,11 +48,20 @@ export const Menu = styled.ul`
         margin-bottom: 24px;
     }
 ` 
-export const NewNote = styled.div`
+export const NewNote = styled.button`
     grid-area: newnote;
-    background: yellow;
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg{
+        margin-left: 8px;
+    }
 ` 
-export const Content = styled.button`
+export const Content = styled.div`
     grid-area: content;
     background: blue;
 `
