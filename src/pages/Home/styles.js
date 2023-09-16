@@ -64,5 +64,6 @@ export const NewNote = styled.button`
 ` 
 export const Content = styled.div`
     grid-area: content;
-    background: blue;
+    padding: 0 64px;
+    overflow: auto;
 `

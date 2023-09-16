@@ -2,6 +2,8 @@ import { FiPlus, FiSearch } from 'react-icons/fi'
 
 import { Container, Brand, Search, Menu, NewNote, Content } from './styles'
 import { Header } from '../../components/Header'
+import { Section } from '../../components/Section'
+import { Note } from '../../components/Note'
 import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
 
@@ -31,6 +33,15 @@ export function Home(){
             </Search>
                    
             <Content>
+                <Section title="My notes">
+                    <Note data={{
+                        title: "API concepts",
+                        tags: [
+                            {id: '1', name: 'NodeJS'},
+                            {id: '2', name: 'Javascript'}
+                        ]
+                    }}/>
+                </Section>
             </Content>
 
             <NewNote>
