@@ -1,9 +1,10 @@
-import { Container, Form } from './styles'
-import { Header } from '../../components/Header'
-import { Input } from '../../components/Input'
-import { Section } from '../../components/Section'
 import { NoteItem } from '../../components/NoteItem'
 import { Textarea } from '../../components/Textarea'
+import { Section } from '../../components/Section'
+import { Button } from '../../components/Button'
+import { Header } from '../../components/Header'
+import { Input } from '../../components/Input'
+import { Container, Form } from './styles'
 
 export function New() {
     return(
@@ -25,6 +26,15 @@ export function New() {
                         <NoteItem value="http://github.com/lucaslirah"/>
                         <NoteItem isNew placeholder="New link"/>
                     </Section>
+
+                    <Section title="Markers">
+                        <div className="tags">
+                            <NoteItem value="react"/>
+                            <NoteItem isNew placeholder="New tag"/>
+                        </div>
+                    </Section>
+
+                    <Button title="Save"/>
                 </Form>
             </main>
         </Container>
