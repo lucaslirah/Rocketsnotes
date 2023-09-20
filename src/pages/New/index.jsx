@@ -5,6 +5,7 @@ import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
 import { Container, Form } from './styles'
+import { Link } from 'react-router-dom'
 
 export function New() {
     return(
@@ -15,7 +16,7 @@ export function New() {
                 <Form>
                     <header>
                         <h1>Create note</h1>
-                        <a href="/">Back</a>
+                        <Link to="/">Back</Link>
                     </header>
 
                     <Input placeholder="Title" />

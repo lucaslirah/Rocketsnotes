@@ -1,11 +1,10 @@
-import { FiPlus, FiSearch } from 'react-icons/fi'
-
 import { Container, Brand, Search, Menu, NewNote, Content } from './styles'
-import { Header } from '../../components/Header'
-import { Section } from '../../components/Section'
-import { Note } from '../../components/Note'
-import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
+import { Section } from '../../components/Section'
+import { FiPlus, FiSearch } from 'react-icons/fi'
+import { Header } from '../../components/Header'
+import { Input } from '../../components/Input'
+import { Note } from '../../components/Note'
 
 export function Home(){
     return(
@@ -44,7 +43,7 @@ export function Home(){
                 </Section>
             </Content>
 
-            <NewNote>
+            <NewNote to="/new">
                 <FiPlus/>
                 Create note
             </NewNote>        
