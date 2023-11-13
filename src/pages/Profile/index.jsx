@@ -9,12 +9,23 @@ import { Link } from 'react-router-dom'
 
 export function Profile(){
 
-    const { user } = useAuth()
+    const { user, updateProfile } = useAuth()
 
     const [name, setName] = useState(user.name)
     const [email, setEmail] = useState(user.email)
     const [passwordOld, setPasswordOld] = useState()
     const [passwordNew, setPasswordNew] = useState()
+
+    async function handleUpdate(){
+        const user = {
+            name,
+            email,
+            password: passwordNew,
+            old_password: passwordOld
+        }
+        await updateProfile({ user })
+        console.log(user)
+    }
 
     return(
         <Container>
@@ -38,30 +49,30 @@ export function Profile(){
                 type="text"
                 placeholder="Name"
                 icon={FiUser}
-                onChange={e => setName(e.targe.value)}
+                onChange={e => setName(e.target.value)}
                 value={name}
                 />
                 <Input
                 type="text"
                 placeholder="E-mail"
                 icon={FiMail}
-                onChange={e => setEmail(e.targe.value)}
+                onChange={e => setEmail(e.target.value)}
                 value={email}
                 />
                 <Input
                 type="password"
                 placeholder="Current Password"
                 icon={FiLock}
-                onChange={e => setPasswordOld(e.targe.value)}
+                onChange={e => setPasswordOld(e.target.value)}
                 />
                 <Input
                 type="password"
                 placeholder="New Password"
                 icon={FiLock}
-                onChange={e => setPasswordNew(e.targe.value)}
+                onChange={e => setPasswordNew(e.target.value)}
                 />
 
-                <Button title="Save"/>
+                <Button title="Save" onClick={handleUpdate}/>
             </Form>
         </Container>
     )
