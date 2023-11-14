@@ -45,7 +45,7 @@ export function New() {
                             ))
                         }
                         <NoteItem 
-                        isNew
+                        $isnew
                         placeholder="New link"
                         value={newLink}
                         onChange={e => setNewLink(e.target.value)}
@@ -56,7 +56,7 @@ export function New() {
                     <Section title="Markers">
                         <div className="tags">
                             <NoteItem value="react"/>
-                            <NoteItem isNew placeholder="New tag"/>
+                            <NoteItem $isnew placeholder="New tag"/>
                         </div>
                     </Section>
 
