@@ -55,8 +55,15 @@ export function New() {
 
                     <Section title="Markers">
                         <div className="tags">
-                            <NoteItem value="react"/>
-                            <NoteItem $isnew placeholder="New tag"/>
+                            <NoteItem 
+                            $tagItem
+                            value="react"
+                            />
+                            <NoteItem 
+                            $tagItem
+                            $isnew 
+                            placeholder="New tag"
+                            />
                         </div>
                     </Section>
 

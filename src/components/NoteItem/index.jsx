@@ -1,9 +1,9 @@
 import { Container } from './styles'
 import { FiPlus, FiX } from 'react-icons/fi'
 
-export function NoteItem({ $isnew, value, onClick, ...rest }){
+export function NoteItem({ $isnew, value, onClick, $tagItem,...rest }){
     return (
-        <Container $isnew={$isnew}>
+        <Container $isnew={$isnew} $tagItem={$tagItem}>
             <input 
                 type="text"
                 value={value}
