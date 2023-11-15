@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { NoteItem } from '../../components/NoteItem'
 import { Textarea } from '../../components/Textarea'
 import { Section } from '../../components/Section'
@@ -7,15 +8,20 @@ import { Input } from '../../components/Input'
 import { Container, Form } from './styles'
 import { Link } from 'react-router-dom'
 
-import { useState } from 'react'
+import { api } from '../../services/api'
+import { useNavigate } from 'react-router-dom'
 
 export function New() {
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
 
     const [links, setLinks] = useState([])
     const [newLink, setNewLink] = useState("")
 
     const [tags, setTags] = useState([])
     const [newTag, setNewTag] = useState("")
+
+    const navigate = useNavigate()
 
     function handleAddLink(){
         setLinks(prevState => [...prevState, newLink])
@@ -33,6 +39,19 @@ export function New() {
         setTags(prevState => prevState.filter(tag => tag !== deleted))
     }
 
+    async function handleNewNote(){
+        await api.post("/notes", {
+            title,
+            description,
+            tags,
+            links
+        })
+        
+        alert("Nota criada com sucesso!")
+
+        navigate("/")
+    }
+
     return(
         <Container>
             <Header />
@@ -44,17 +63,23 @@ export function New() {
                         <Link to="/">Back</Link>
                     </header>
 
-                    <Input placeholder="Title" />
+                    <Input 
+                    placeholder="Title"
+                    onChange={e => setTitle(e.target.value)}
+                    />
 
-                    <Textarea placeholder="Comments"/>
+                    <Textarea 
+                    placeholder="Comments"
+                    onChange={e => setDescription(e.target.value)}
+                    />
 
                     <Section title="Usefull Links">
                         {
                             links.map((link, index) => (
                                 <NoteItem
-                                    key={String(index)}
-                                    value={link}
-                                    onClick={() => {handleRemoveLink(link)}}
+                                key={String(index)}
+                                value={link}
+                                onClick={() => {handleRemoveLink(link)}}
                                 />
                             ))
                         }
@@ -79,6 +104,7 @@ export function New() {
                                     />
                                 ))
                             }
+
                             <NoteItem 
                             $tagItem
                             $isnew 
@@ -92,6 +118,7 @@ export function New() {
 
                     <Button 
                     title="Save"
+                    onClick={handleNewNote}
                     />
                 </Form>
             </main>
