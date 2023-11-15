@@ -51,7 +51,7 @@ export function New() {
             return alert("Você deixou uma tag no campo, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.")
         }
         //essa linha é temporária
-        if(!newTag || !newLink){
+        if(!tags || !links){
             return alert("Adicione uma tag e um link.")
         }
 
