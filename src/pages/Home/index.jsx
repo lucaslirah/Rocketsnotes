@@ -6,7 +6,20 @@ import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
 import { Note } from '../../components/Note'
 
+import { useState, useEffect } from 'react'
+import { api } from '../../services/api'
+
 export function Home(){
+    const [tags, setTags] = useState([])
+
+    useEffect(() =>{
+        async function fetchTags(){
+            const response = await api.get("/tags", tags)
+            setTags(response.data)
+        }
+        fetchTags()
+    }, [])
+
     return(
         <Container>
             <Brand>
@@ -17,14 +30,16 @@ export function Home(){
    
             <Menu>
                 <li>
-                    <ButtonText title="Sample" $isactive/>
+                    <ButtonText title="Todos" $isactive/>
                 </li>
-                <li>
-                    <ButtonText title="Sample1"/>
-                </li>
-                <li>
-                    <ButtonText title="Sample2"/>
-                </li>
+                
+                {
+                    tags && tags.map(tag => (
+                        <li key={tag.id}>
+                            <ButtonText title={tag.name}/>
+                        </li>
+                    ))
+                }
             </Menu>
 
             <Search>
