@@ -21,9 +21,9 @@ export function SignIn(){
         <Container>
             <Form>
                 <h1>Rocketnotes</h1>
-                <p>Application to save and manage your useful links.</p>
+                <p>Aplicação para salvar e gerenciar seus links úteis.</p>
 
-                <h2>Make your login</h2>
+                <h2>Faça seu login</h2>
 
                 <Input 
                 type="text"
@@ -33,15 +33,15 @@ export function SignIn(){
                 />
                 <Input 
                 type="password"
-                placeholder='Password'
+                placeholder='Senha'
                 icon={FiLock} 
                 onChange={e => setPassword(e.target.value)}
                 />
 
-                <Button title="Login" onClick={handleSignIn}/>
+                <Button title="Entrar" onClick={handleSignIn}/>
 
                     <Link to="/register">
-                        Create an account
+                        Criar uma conta
                     </Link>
             </Form>
 

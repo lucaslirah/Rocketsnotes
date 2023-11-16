@@ -39,13 +39,13 @@ export function SignUp(){
 
             <Form>
                 <h1>Rocketnotes</h1>
-                <p>Application to save and manage your useful links.</p>
+                <p>Aplicação para salvar e gerenciar seus links úteis.</p>
 
-                <h2>Create your account</h2>
+                <h2>Criar sua conta</h2>
 
                 <Input 
                 type="text"
-                placeholder='Name'
+                placeholder='Nome'
                 icon={FiUser}
                 onChange={e => setName(e.target.value)}
                 />
@@ -57,15 +57,15 @@ export function SignUp(){
                 />
                 <Input 
                 type="password"
-                placeholder='Password'
+                placeholder='Senha'
                 icon={FiLock} 
                 onChange={e => setPassword(e.target.value)}
                 />
 
-                <Button title="Register" onClick={handleSignUp}/>
+                <Button title="Cadastrar" onClick={handleSignUp}/>
 
                 <Link to="/">
-                    Back to login
+                    Voltar para o login
                 </Link>
             </Form>
         </Container>

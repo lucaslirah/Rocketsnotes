@@ -74,21 +74,21 @@ export function New() {
             <main>
                 <Form>
                     <header>
-                        <h1>Create note</h1>
-                        <Link to="/">Back</Link>
+                        <h1>Criar nota</h1>
+                        <Link to="/">Voltar</Link>
                     </header>
 
                     <Input 
-                    placeholder="Title"
+                    placeholder="Título"
                     onChange={e => setTitle(e.target.value)}
                     />
 
                     <Textarea 
-                    placeholder="Comments"
+                    placeholder="Comentário"
                     onChange={e => setDescription(e.target.value)}
                     />
 
-                    <Section title="Usefull Links">
+                    <Section title="Links úteis">
                         {
                             links.map((link, index) => (
                                 <NoteItem
@@ -100,14 +100,14 @@ export function New() {
                         }
                         <NoteItem 
                         $isnew
-                        placeholder="New link"
+                        placeholder="Novo link"
                         value={newLink}
                         onChange={e => setNewLink(e.target.value)}
                         onClick={handleAddLink}
                         />
                     </Section>
 
-                    <Section title="Markers">
+                    <Section title="Marcadores">
                         <div className="tags">
                             {
                                 tags.map((tag, index) => (
@@ -123,7 +123,7 @@ export function New() {
                             <NoteItem 
                             $tagItem
                             $isnew 
-                            placeholder="New tag"
+                            placeholder="Nova tag"
                             value={newTag}
                             onChange={e => setNewTag(e.target.value)}
                             onClick={handleAddTag}
@@ -132,7 +132,7 @@ export function New() {
                     </Section>
 
                     <Button 
-                    title="Save"
+                    title="Salvar"
                     onClick={handleNewNote}
                     />
                 </Form>

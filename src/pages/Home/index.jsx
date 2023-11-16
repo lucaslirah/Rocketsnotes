@@ -87,14 +87,14 @@ export function Home(){
 
             <Search>
                 <Input 
-                placeholder="Search by title" 
+                placeholder="Procurar por título" 
                 icon={FiSearch}
                 onChange={e => setSearch(e.target.value)}
                 />
             </Search>
                    
             <Content>
-                <Section title="My notes">
+                <Section title="Minhas notas">
                     {
                         notes.map(note => (
                             <Note
@@ -119,7 +119,7 @@ export function Home(){
 
             <NewNote to="/new">
                 <FiPlus/>
-                Create note
+                Criar nota
             </NewNote>        
         </Container>
     )
