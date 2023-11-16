@@ -26,7 +26,7 @@ export function Details() {
   }
 
   function handleBack(){
-    navigate('/')
+    navigate(-1)
   }
 
   useEffect(() => {
