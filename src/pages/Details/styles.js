@@ -18,6 +18,7 @@ export const Container = styled.div`
 `
 export const Links = styled.ul`
     list-style: none;
+    overflow: auto;
 
     >li{
         margin-top: 12px;
